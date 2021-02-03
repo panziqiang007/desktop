@@ -1,0 +1,66 @@
+<div id="sends" class="vault" attr.aria-hidden="{{showingModal}}">
+    <div class="groupings">
+        <div class="mac-bar"></div>
+        <div class="content">
+            <div class="inner-content">
+                <div class="top-content">
+                    <h2 class="sr-only">{{'filters' | i18n}}</h2>
+                    <ul>
+                        <li [ngClass]="{active: selectedAll}">
+                            <a href="#" appStopClick (click)="selectAll()">
+                                <i class="fa fa-fw fa-th">&nbsp;</i>{{'allSends' | i18n}}
+                            </a>
+                        </li>
+                    </ul>
+                    <h2>{{'types' | i18n}}</h2>
+                    <ul>
+                        <li [ngClass]="{active: selectedType === sendType.Text}">
+                            <a href="#" appStopClick (click)="selectType(sendType.Text)">
+                                <i class="fa fa-fw fa-file-text-o"></i>&nbsp;{{'sendTypeText' | i18n}}
+                            </a>
+                        </li>
+                        <li [ngClass]="{active: selectedType === sendType.File}">
+                            <a href="#" appStopClick (click)="selectType(sendType.File)">
+                                <i class="fa fa-fw fa-file-o"></i>&nbsp;{{'sendTypeFile' | i18n}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <a routerLink="/" class="fa fa-lock btn primary icon-link" title="Bitwarden Send"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="items">
+        <div class="header header-search">
+            <div class="search">
+                <input type="search" placeholder="{{'searchSends' | i18n}}" id="search"
+                    [(ngModel)]="searchText" (input)="search(200)" autocomplete="off" appAutofocus>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="content">
+            <!-- TODO: implement data -->
+            <div class="no-items" *ngIf="!filteredSends.length">
+                <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
+                <ng-container *ngIf="loaded">
+                    <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+                    <p>{{'noItemsInList' | i18n}}</p>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="details"> -->
+    <!--     <div class="content"> -->
+    <!--     </div> -->
+    <!-- </div> -->
+    <div class="logo">
+        <div class="content">
+            <div class="inner-content">
+                <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #sendAddEdit></ng-template>

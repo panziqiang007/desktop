@@ -62,6 +62,10 @@ import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
+import { AccessComponent } from './send/access.component';
+import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
+import { SendComponent } from './send/send.component';
+
 import { registerLocaleData } from '@angular/common';
 import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
@@ -155,6 +159,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
     ],
     declarations: [
         A11yTitleDirective,
+        AccessComponent,
         AddEditComponent,
         ApiActionDirective,
         AppComponent,
@@ -184,6 +189,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SendAddEditComponent,
+        SendComponent,
         SetPasswordComponent,
         SettingsComponent,
         ShareComponent,
@@ -209,6 +216,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PremiumComponent,
         SettingsComponent,
         ShareComponent,
+        SendAddEditComponent,
         TwoFactorOptionsComponent,
     ],
     providers: [],
